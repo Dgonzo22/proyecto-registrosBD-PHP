@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="index.css" type="text/css">
+   <script></script>
+</head>
+<body>
+    <form action="registro.php" method="POST" class="form">
+        <div class="cabecera">
+            <h2>FICHA MEDICA</h2>
+        </div>
+        <address>Fencha</address>
+        <div class="campo completo">
+            <label for="">Nombre</label>
+            <input type="text" name="nombre">
+        </div>
+        <div class="campo completo">
+            <label for="">Apellido</label>
+            <input type="text" name="apellido">
+        </div>
+        <div class="campo mitad">
+            <label for="">Edad</label>
+            <input type="number" name="edad">
+        </div>
+        <div class="campo mitad">
+            <label for="">Sexo</label>
+            <select name="sexo">
+                <option value="Hombre" name="sexo">Hombre</option>
+                <option value="Mujer" name="sexo">Mujer</option>
+            </select>
+        </div>
+        <div class="campo completo">
+            <label for="" >Correo</label>
+            <input type="email" name="correo">
+        </div>
+        <div class="campo completo">
+            <label for="">Telefono</label>
+            <input type="number" name="telefono">
+        </div>
+        Sistema de Salud
+        <div class="sleccionar">
+            <input type="radio" value="Isapre" name="sistemaSalud" id="sistemaSalud">
+            <label for="">Isapre</label>
+            <input type="radio" value="Fomesa" name="sistemaSalud" id="sistemaSalud">
+            <label for="">Fomesa</label>
+            <input type="radio" value="Particular" name="sistemaSalud" id="sistemaSalud">
+            <label for="">Particular</label>
+            <input type="radio" value="Fuerzas Armadas" name="sistemaSalud" id="sistemaSalud">
+            <label for="">Fuerzas Armadas</label>
+        </div>
+        Es alergico a
+        <div class="sleccionar">
+            <input type="radio" value="Medicamentos" name="alergia" >
+            <label for="">Medicamentos</label>
+            <input type="radio" value="Alimentos" name="alergia">
+            <label for="">Alimentos</label>
+            <input type="radio" value="Pastillas" name="alergia">
+            <label for="">Pastillas</label>
+            <input type="radio" value="Otros" name="alergia">
+            <label for="">Otros</label>
+        </div>
+        Grupo sanguineo
+        <div class="sleccionar">
+            <input type="radio" name="Sangre" value="A +">
+            <label for="">A +</label>
+            <input type="radio" name="Sangre" value="A -">
+            <label for="">A -</label>
+            <input type="radio" name="Sangre" value="b +">
+            <label for="">b +</label>
+            <input type="radio" name="Sangre" value="b -">
+            <label for="">b -</label>
+            <input type="radio" name="Sangre" value="ab +">
+            <label for="">ab +</label>
+            <input type="radio" name="Sangre" value="ab -">
+            <label for="">ab -</label>
+        </div>
+        Observaciones:
+        <div class="textoLargo">
+            <textarea name="Observaciones" id="" cols="20" rows="10"></textarea>
+        </div>
+        <hr>
+        <div class="listBtn">
+            <input class="btn" type="submit" value="Registrar"/>
+            <button class="btn" type="button" onclick="limpiarTexto()">
+                Limpiar
+            </button>
+            <a class="btn" href="./verRegistros.php">Ver Registros</a>
+        </div>
+    </form>
+    <script>
+        function limpiarTexto() {
+            //limpiar TODOS los radiosButtons
+            const radioButtons = document.querySelectorAll(".sleccionar input[type='radio']");
+            for (const radioButton of radioButtons) {
+                radioButton.checked = false;
+            }
+            //limpiar Todos los inputs tipo numerico
+            const listTextNumb = document.querySelectorAll("input[type='number']");
+            for (const text of listTextNumb) {
+                text.value = "";
+            }
+            
+            //limpiar Todos los inputs tipo texto
+            const listTextText = document.querySelectorAll("input[type='text']");
+            for (const text of listTextText) {
+                text.value = "";
+            }
+            //limpiar Todos los inputs tipo email
+            const listEmail = document.querySelectorAll("input[type='email']");
+            for (const text of listEmail) {
+                text.value = "";
+            }
+            //limpiar Todos los inputs tipo texttarea
+            const listTextos= document.querySelectorAll("textarea");
+            for (const text of listTextos) {
+                text.value = "";
+            }
+           
+            
+
+        }
+    </script>
+</body>
+</html>
